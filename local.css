@@ -1,0 +1,68 @@
+::-webkit-scrollbar {
+  width: 15px;
+  display: block;
+}
+
+::-webkit-scrollbar-thumb {
+  width: inherit;
+  height: 25px; 
+  background: #c3c3c3;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "sans serif", Helvetica, Arial;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+body .content {
+/*   width: 80%; */
+  height: auto;
+  font-family: 'Arial';
+  text-align: center;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  top: 35%;
+}
+
+.width-longer body .content {
+  width: 65%;
+}
+
+.height-longer body .content {
+  width: 100%;
+}
+
+body .content .section-container .title {
+/*   width: 100%; */
+  width: 60%;
+  height: 30px;
+  border: 1px solid #c3c3c3;
+  color: black;
+  box-shadow: 0px 1px 7px #c3c3c3;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+body .content .section-container .dropdown {
+  display: none;
+}
+
+body .content .section-container.show .dropdown {
+  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+body .content img {
+  width: 100%;
+}
+
