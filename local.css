@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
   display: block;
 }
 
@@ -14,23 +14,108 @@
 }
 
 body {
-  width: 100%;
-  height: 100%;
+  background: #111;
+/*   background: radial-gradient(#000000, #000000db); */
   font-family: "sans serif", Helvetica, Arial;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
-body .content {
-/*   width: 80%; */
-  height: auto;
-  font-family: 'Arial';
-  text-align: center;
-  line-height: 1.4;
+
+/* HEADER */
+body > .header {
+  width: 100%;
+  height: 45px;
+  background: #111;
+  /*   background: radial-gradient(#000000, transparent); */
+  box-shadow: 0px 1px 7px #000;
+  display: inline-block;
+  z-index: 2;
+  bottom: auto;
+  display: inline-flex;
+  position: fixed;
+} 
+
+body > .header .menu.section-container {
+  width: fit-content;
+  height: fit-content;
+/*   border: 1px solid green; */
+  margin: auto auto auto 0px;
+}
+
+body > .header .menu.section-container > button {
+  width: 45px;
+  height: 45px;
+  margin-left: 8px;
+/*   border: 1px solid blue; */
+  display: block;
+  position: relative;
+}
+
+body > .header .section-container button.icon.menu::before {
+  background-size: 70%;
+}
+
+.menu.black.icon::before {
+  background-image: url(https://raw.githubusercontent.com/jojosweb/libraries/main/Icons/Shapes/Asterik%20-%20White%20-%201.png);
+}
+
+
+/* MENU DROPDOWN */
+body > .header .menu.section-container .dropdown {
+  width: 260px;
+  height: 260px;
+  width: fit-content;
+  height: fit-content;
+  background: #111;
+  box-shadow: 0px 1px 7px #000;
+  padding: 0px 16px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  top: 35%;
+  border-radius: 0px 0px 5px 5px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+body > .header .menu.section-container .dropdown.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+body > .header .menu.section-container .dropdown button {
+  margin: auto auto auto 0px;
+  color: #fff;
+  text-align: left;
+  width: fit-content;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: monospace; 
+  padding: 14px 0px;
+}
+
+
+/* HEADER TITLE */
+body > .header > .title {
+  width: fit-content;
+  height: inherit;
+  margin: auto 0px auto auto;
+  font-family: Bungee;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #fff;
+  right: 8px;
+  left: auto;
+  user-select: none;
+  line-height: 2;
+  white-space: nowrap;
+}
+
+
+/* CONTENT */
+body .content {
+  height: 100%;
+  padding-top: 45px;
+/*   border: 1px solid red; */
 }
 
 .width-longer body .content {
@@ -41,28 +126,49 @@ body .content {
   width: 100%;
 }
 
-body .content .section-container .title {
-/*   width: 100%; */
-  width: 60%;
-  height: 30px;
-  border: 1px solid #c3c3c3;
-  color: black;
-  box-shadow: 0px 1px 7px #c3c3c3;
-  border-radius: 50px;
-  margin-bottom: 20px;
-}
 
-body .content .section-container .dropdown {
+/* CONTENT - SECTION CONTAINER */
+body > .content .section-container {
+  width: 100%;
+  height: 100%;
+/*   border: 1px solid green; */
+/*   display: flex; */
+  flex-direction: column;
+  margin-top: 5px;
+  opacity: 0;
+  visibility: hidden;
   display: none;
 }
 
-body .content .section-container.show .dropdown {
-  display: block;
+body > .content .section-container.show {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+}
+
+body > .content .section-container p.description {
+/*   width: 100%;
+  height: auto; */
+  width: fit-content;
+  color: #fff;
+  padding: 15px 15px;
+  margin: auto;
+}
+
+body > .content .section-container img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 400px;
+/*   border-radius: 15px; */
+}
+
+
+/* SECTION CONTAINER TITLE */
+body > .content .section-container .dropdown {
+/*   display: none; */
+}
+
+body > .content .section-container.show .dropdown {
   display: flex;
   flex-direction: column;
 }
-
-body .content img {
-  width: 100%;
-}
-
