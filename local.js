@@ -1,21 +1,77 @@
 // TOGGLE MENU
 function toggleMenu() {
-  var tableaux = $('.tableaux.section-container '),
-      photo_series = $('.photo-series.section-container '),
-      editorial = $('.editorial.section-container '),
-      snapshots = $('.snapshots.section-container '),
-      contact = $('.contact.section-container a.contact');
+  var menu_button = $('.header > .menu > button.menu'),
+      dropdown = $('.header > .menu > .dropdown'),
+      dropdown_buttons = $('.header > .menu > .dropdown button'),
+      dropdown_buttons_text = dropdown_buttons.text(),
+      home_button = $('.header > .menu .dropdown .home'),
+      home_section_container = $('body > .content .section-container.home'),
+      tableaux_button = $('.header > .menu .dropdown .tableaux'),
+      tableaux_section_container = $('body > .content .section-container.tableaux'),
+      photo_series_button = $('.header > .menu .dropdown .photo-series'), 
+      photo_series_section_container = $('body > .content .section-container.photo-series'),
+      editorial_button = $('.header > .menu .dropdown .editorial'),
+      editorial_section_container = $('body > .content .section-container.editorial'),
+      snapshots_button = $('.header > .menu .dropdown .snapshots'),
+      snapshots_section_container = $('body > .content .section-container.snapshots'),
+      paintings_button = $('.header > .menu .dropdown .paintings'),
+      paintings_section_container = $('body > .content .section-container.paintings'),
+      design_button = $('.header > .menu .dropdown .design'),
+      design_section_container = $('body > .content .section-container.design'),
+      info_button = $('.header > .menu .dropdown .info'),
+      info_section_container = $('body > .content .section-container.info'),
+      header_title = $('.header > .title'),
+      header_title_text = header_title.text(),
+      content_container = $('body > .content'),
+      content_sections = $('body > .content .section-container');
   
-  $('.content .section-container').on('click', function() {
-    $(this).toggleClass('show');
+  
+  menu_button.on('click', function() {
+    dropdown.toggleClass('show');
+    dropdown_buttons.on('click', function() {
+      dropdown.removeClass('show');
+      content_sections.removeClass('show');
+      header_title.text($(this).text());
+      window.scrollTo(0, 0);
+      
+      if ($(this).hasClass('home')) {
+        $('body > .content .section-container.home').addClass('show');
+      }
+      
+      if ($(this).hasClass('tableaux')) {
+        $('body > .content .section-container.tableaux').addClass('show');
+      }
+      
+      if ($(this).hasClass('photo-series')) {
+        $('body > .content .section-container.photo-series').addClass('show');
+      }
+      
+      if ($(this).hasClass('editorial')) {
+        $('body > .content .section-container.editorial').addClass('show');
+      }
+      
+      if ($(this).hasClass('snapshots')) {
+        $('body > .content .section-container.snapshots').addClass('show');
+      }
+      
+      if ($(this).hasClass('paintings')) {
+        $('body > .content .section-container.paintings').addClass('show');
+      }
+      
+      if ($(this).hasClass('design')) {
+      }
+      
+      if ($(this).hasClass('info')) {
+        $('body > .content .section-container.info').addClass('show');
+      }
+      
+    })
+    
+    content_container.on('click', function() {
+      dropdown.removeClass('show');
+    })
   })
   
-  
-  $('div.content').on('click', function() {
-    if ($('.section-container').hasClass('show')) {
-      $('.contact.section-container .menu').removeClass('show');
-    }
-  })
 }
 
 
