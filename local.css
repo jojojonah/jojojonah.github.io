@@ -48,23 +48,31 @@ body > .header .menu.section-container > button {
 /*   border: 1px solid blue; */
   display: block;
   position: relative;
+  z-index: 2;
+  background: #111;
 }
 
 body > .header .section-container button.icon.menu::before {
   background-size: 70%;
+  transform: rotate(0deg);
+  transition-duration: 0.38s;
 }
 
 .menu.black.icon::before {
   background-image: url(https://raw.githubusercontent.com/jojosweb/libraries/main/Icons/Shapes/Asterik%20-%20White%20-%201.png);
 }
 
+body > .header .section-container button.icon.menu.rotate::before {
+  transform: rotate(260deg);
+}
+
 
 /* MENU DROPDOWN */
 body > .header .menu.section-container .dropdown {
-  width: 260px;
-  height: 260px;
   width: fit-content;
-  height: fit-content;
+/*   height: fit-content; */
+/*   height: 360px; */
+  height: 0px;
   background: #111;
   box-shadow: 0px 1px 7px #000;
   padding: 0px 16px;
@@ -72,13 +80,18 @@ body > .header .menu.section-container .dropdown {
   display: flex;
   flex-direction: column;
   border-radius: 0px 0px 5px 5px;
-  opacity: 0;
-  visibility: hidden;
+/*   opacity: 0;
+  visibility: hidden; */
+  transition-duration: 0.38s;
+  overflow: hidden;
 }
 
 body > .header .menu.section-container .dropdown.show {
-  opacity: 1;
-  visibility: visible;
+/*   opacity: 1;
+  visibility: visible; */
+/*   height: 260px; */
+/*   height: fit-content; */
+  height: 360px;
 }
 
 body > .header .menu.section-container .dropdown button {
@@ -108,6 +121,14 @@ body > .header > .title {
   user-select: none;
   line-height: 2;
   white-space: nowrap;
+}
+
+.height-longer body > .header > .title.short {
+  max-width: 80%;
+  font-size: 15px;
+  white-space: break-spaces;
+  overflow: hidden;
+  line-height: 1;
 }
 
 
@@ -168,6 +189,15 @@ body > .content .section-container img.portrait {
   height: 100%;
 }
 
+.width-longer body > .content .section-container img.portrait {
+  width: auto;
+  height: 100%;
+}
+
+.height-longer body > .content .section-container img.portrait {
+  width: 100%;
+  height: auto;
+}
 
 /* SECTION CONTAINER TITLE */
 body > .content .section-container .dropdown {
