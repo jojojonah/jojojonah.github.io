@@ -27,12 +27,19 @@ function toggleMenu() {
   
   
   menu_button.on('click', function() {
+    menu_button.toggleClass('rotate');
     dropdown.toggleClass('show');
     dropdown_buttons.on('click', function() {
+      menu_button.removeClass('rotate');
       dropdown.removeClass('show');
       content_sections.removeClass('show');
       header_title.text($(this).text());
       window.scrollTo(0, 0);
+      
+      
+      if (header_title.hasClass('short')) {
+        header_title.removeClass('short');
+      }
       
       if ($(this).hasClass('home')) {
         $('body > .content .section-container.home').addClass('show');
@@ -40,6 +47,7 @@ function toggleMenu() {
       
       if ($(this).hasClass('tableaux')) {
         $('body > .content .section-container.tableaux').addClass('show');
+        header_title.addClass('short');
       }
       
       if ($(this).hasClass('photo-series')) {
@@ -59,6 +67,8 @@ function toggleMenu() {
       }
       
       if ($(this).hasClass('design')) {
+        header_title.text("Home");
+        $('body > .content .section-container.home').addClass('show');
       }
       
       if ($(this).hasClass('info')) {
@@ -68,6 +78,7 @@ function toggleMenu() {
     })
     
     content_container.on('click', function() {
+      menu_button.removeClass('rotate');
       dropdown.removeClass('show');
     })
   })
