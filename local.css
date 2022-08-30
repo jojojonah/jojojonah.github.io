@@ -134,6 +134,7 @@ body > .header > .title {
   white-space: break-spaces;
   overflow: hidden;
   line-height: 1;
+  text-align: right;
 }
 
 
