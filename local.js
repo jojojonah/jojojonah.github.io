@@ -1,3 +1,25 @@
+// CHECK IMAGE SIZE
+function checkImageSize() {
+  var content_image = $('body > .content img'),
+      content_image_width = content_image.width(),
+      content_image_height = content_image.height();
+  
+  content_image.each(function() {
+    if ($(this).width() > $(this).height()) {
+      $(this).removeClass('portrait');
+      $(this).addClass('landscape');
+    }
+
+    if ($(this).height() > $(this).width()) {
+      $(this).removeClass('landscape');
+      $(this).addClass('portrait');
+    }
+  });
+}
+
+
+
+
 // TOGGLE MENU
 function toggleMenu() {
   var menu_button = $('.header > .menu > button.menu'),
@@ -34,7 +56,8 @@ function toggleMenu() {
       dropdown.removeClass('show');
       content_sections.removeClass('show');
       header_title.text($(this).text());
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
+      content_container.scroll();
       
       
       if (header_title.hasClass('short')) {
@@ -75,6 +98,7 @@ function toggleMenu() {
         $('body > .content .section-container.info').addClass('show');
       }
       
+      checkImageSize();
     })
     
     content_container.on('click', function() {
@@ -92,5 +116,6 @@ function toggleMenu() {
 window.onload = function() {
   // monotoneBreather('.loader', 2000);
   // removeLoader('.loader', 'no-opacity', 9000, 9400);
+  checkImageSize();
   toggleMenu();
 }
