@@ -15,6 +15,7 @@
 ::-webkit-scrollbar-track {
 /*     background: #f1f1f1; */
   background: transparent;
+/*   background: red; */
 }
 
 body {
@@ -146,7 +147,9 @@ body .content {
   height: -webkit-fill-available;
   margin-top: 45px;
 /*   border: 1px solid red; */
-  overflow: scroll;
+/*   overflow: scroll; */
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* .width-longer body .content {
@@ -170,7 +173,13 @@ body > .content .section-container {
   opacity: 0;
   visibility: hidden;
   display: none;
-  margin: auto auto auto auto;
+/*   margin: 30px auto auto auto; */
+  margin: auto;
+}
+
+.width-longer body > .content .section-container.no-header-title {
+/*   margin: 40px auto auto auto; */
+  margin: 10px auto auto auto;
 }
 
 .width-longer body .content .section-container {
@@ -188,7 +197,7 @@ body > .content .section-container.show {
   display: flex;
 }
 
-body > .content .section-container .description {
+body > .content .section-container p {
 /*   width: 100%;
   height: auto; */
   width: fit-content;
@@ -202,44 +211,93 @@ body > .content .section-container .description {
   text-align: center;
 }
 
+body > .content .section-container .image-container {
+  width: 100%;
+  height: fit-content;
+/*   border: 1px solid blue; */
+/*   margin: auto auto 400px auto; */
+  margin: auto;
+}
+
+.width-longer body > .content .section-container .image-container {
+  margin: auto auto 40px auto;
+}
+
+.height-longer body > .content .section-container .image-container.landscape {
+  margin: auto auto 400px auto;
+}
+
+.height-longer body > .content .section-container .image-container.portrait {
+  margin: auto auto 40px auto;
+}
+
+body > .content .section-container .image-container:last-child {
+  margin: auto auto 40px auto;
+  margin: auto auto 40px auto !important;
+/*   border: 1px solid green; */
+}
+
+body > .content .image-container p {
+  text-align: right;
+  margin: auto;
+  margin-right: 0px;
+  text-transform: capitalize;
+  
+}
+
+.width-longer body > .content .image-container.portrait p {
+  text-align: center;
+  margin: auto;
+}
+
+body > .content .section-container p.bio {
+      text-transform: none;
+    font-size: 13px;
+    text-align: left;
+}
+
+
+body > .content .section-container .image-container p span {
+  font-size: 12px;
+  color: #fff;
+/*   text-decoration: underline; */
+  line-height: 1.8;
+/*   font-size: 10px; */
+/*   text-transform: uppercase; */
+/*   font-weight: bold; */
+  font-style: italic;
+}
+
 body > .content .section-container img {
   width: 100%;
   height: auto;
-  margin: auto auto 400px auto;
+  
 /*   margin: auto auto 200px auto; */
 /*   border-radius: 15px; */
 }
 
-.width-longer body > .content .section-container img.landscape {
-/*   width: auto;
-  height: 100%; */
-/*   width: auto;
-  height: 100%; */
-}
-
-.width-longer body > .content .section-container img.portrait {
-/*   width: auto;
-  height: 100%; */
-  width: 55%;
+.width-longer body > .content .image-container.portrait img {
+  width: 52%;
   height: auto;
+  margin: auto;
+  position: relative;
+  display: block;
 }
 
-.height-longer body > .content .section-container img.landscape,
-.height-longer body > .content .section-container img.portrait {
+.height-longer body > .content .image-container.landscape img,
+.height-longer body > .content .image-container.portrait img {
   width: 100%;
   height: auto;
 }
 
 .height-longer body > .content .section-container.snapshots img {
-  margin: auto auto 50px auto;
+/*   margin: auto auto 50px auto; */
 }
 
 /* SECTION CONTAINER TITLE */
-body > .content .section-container .dropdown {
-/*   display: none; */
-}
-
-body > .content .section-container.show .dropdown {
-  display: flex;
-  flex-direction: column;
+body > .content .section-container a {
+  text-transform: none;
+  font-size: 13px;
+  text-align: left;
+  color: #fff;
 }
