@@ -3,16 +3,17 @@ function checkImageSize() {
   var content_image = $('body > .content img'),
       content_image_width = content_image.width(),
       content_image_height = content_image.height();
+      // content_image_container = ; 
   
   content_image.each(function() {
     if ($(this).width() > $(this).height()) {
-      $(this).removeClass('portrait');
-      $(this).addClass('landscape');
+      $(this).parent().removeClass('portrait');
+      $(this).parent().addClass('landscape');
     }
 
     if ($(this).height() > $(this).width()) {
-      $(this).removeClass('landscape');
-      $(this).addClass('portrait');
+      $(this).parent().removeClass('landscape');
+      $(this).parent().addClass('portrait');
     }
   });
 }
@@ -56,7 +57,6 @@ function toggleMenu() {
       dropdown.removeClass('show');
       content_sections.removeClass('show');
       header_title.text($(this).text());
-      // window.scrollTo(0, 0);
       content_container.scroll();
       
       
