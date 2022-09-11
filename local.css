@@ -250,10 +250,25 @@ body > .content .image-container p {
   margin: auto;
 }
 
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+@import url('http://fonts.cdnfonts.com/css/whois');
+
+@import url(//db.onlinewebfonts.com/c/f7155a90eafcde757701e3f9adcd8113?family=AmericanTypwrterITCW01-Lt);
+
+                                                
+
 body > .content .section-container p.bio {
-      text-transform: none;
-    font-size: 13px;
-    text-align: left;
+  width: inherit;
+  width: 80%;
+  text-transform: none;
+  font-size: 13px;
+  text-align: left;
+  
+  font-family: 'Helvetica Neue', sans-serif;
+  
+  font-family: 'Whois', sans-serif;
+  font-family: "AmericanTypwrterITCW01-Lt", sans-serif;
+  line-height: 1.5;
 }
 
 
@@ -295,9 +310,74 @@ body > .content .section-container img {
 }
 
 /* SECTION CONTAINER TITLE */
-body > .content .section-container a {
+body > .content .section-container a.link {
+  width: fit-content;
+  height: fit-content;
+  max-width: 80%;
+/*   max-height: inherit; */
+  margin: 15px auto;
+  text-decoration: underline;
   text-transform: none;
   font-size: 13px;
   text-align: left;
   color: #fff;
+  letter-spacing: 1px;
+}
+
+.social-media-profiles {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  /* margin: auto auto 15px auto; */
+  margin: 15px auto;
+  border-radius: 15px;
+  background: radial-gradient(#000000, transparent);
+  box-shadow: 0px 1px 7px #d3d3d3;
+  box-shadow: 0px 1px 7px #000;
+  position: relative;
+  /* margin: -46px auto auto auto; */
+}
+
+.social-media-profiles a {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: auto 15px;
+}
+
+.social-media-profiles a.icon::before {
+  width: inherit;
+  height: inherit;
+  background-size: 70%;
+}
+
+.social-media-profiles .menu {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  color: #fff;
+  right: 0px;
+  border-radius: 0px 0px 5px 5px;
+  /* box-shadow: 0px 5px 7px #efefef; */
+  display: none;
+/*   display: block; */
+  position: absolute;
+  right: 0px;
+  top: -55px;
+  /* margin: -46px auto auto auto; */
+  background: #111;
+  box-shadow: 0px 1px 7px #000;
+}
+
+.social-media-profiles .menu.show {
+  display: block;
+  display: flex;
+}
+
+.social-media-profiles .menu span {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  position: relative;
 }
