@@ -46,7 +46,8 @@ function toggleMenu() {
       header_title = $('.header > .title'),
       header_title_text = header_title.text(),
       content_container = $('body > .content'),
-      content_sections = $('body > .content .section-container');
+      content_sections = $('body > .content .section-container'),
+      mail_button = $('body > .content .section-container.info a.mail');
   
   
   menu_button.on('click', function() {
@@ -107,6 +108,10 @@ function toggleMenu() {
     })
   })
   
+  
+  mail_button.on('click', function() {
+     $('body > .content .section-container.info .menu').toggleClass('show');
+  })
 }
 
 
