@@ -3,7 +3,6 @@ function checkImageSize() {
   var content_image = $('body > .content img'),
       content_image_width = content_image.width(),
       content_image_height = content_image.height();
-      // content_image_container = ; 
   
   content_image.each(function() {
     if ($(this).width() > $(this).height()) {
@@ -16,6 +15,15 @@ function checkImageSize() {
       $(this).parent().addClass('portrait');
     }
   });
+}
+
+
+
+
+// HIDE SECTION CONTAINER
+function hideSectionContainers() {
+  $('body > .content .section-container').removeClass('show');
+  $('body > .content .section-container.home').addClass('show');
 }
 
 
@@ -119,8 +127,9 @@ function toggleMenu() {
 
 // WINDOW ON LOAD
 window.onload = function() {
-  // monotoneBreather('.loader', 2000);
-  // removeLoader('.loader', 'no-opacity', 9000, 9400);
+  monotoneBreather('.loader', 2000);
+  removeLoader('.loader', 'no-opacity', 9000, 9400);
+    // setTimeout(hideSectionContainers, 8900);
   checkImageSize();
   toggleMenu();
 }
